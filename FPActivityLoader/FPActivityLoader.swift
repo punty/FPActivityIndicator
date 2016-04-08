@@ -16,14 +16,12 @@ class FPActivityLoader: UIView {
     static let defaultCircleTime: Double = 1.5
     
     private var strokeAnimation: CAAnimationGroup {
-        
         get {
             return generateAnimation()
         }
     }
     
     private var rotationAnimation: CABasicAnimation {
-        
         get {
             return generateRotationAnimation()
         }
@@ -62,12 +60,8 @@ class FPActivityLoader: UIView {
     @IBInspectable
     var circleTime: Double = 1.5 {
         didSet {
-            //remove animation
-            circleLayer.removeAnimationForKey("strokeEnd")
-            circleLayer.removeAnimationForKey("strokeStart")
-            
+            circleLayer.removeAllAnimations()
             updateAnimation()
-            
         }
     }
     
@@ -158,7 +152,6 @@ class FPActivityLoader: UIView {
             circleLayer.removeAllAnimations()
         }
     }
-    
     
     override func prepareForInterfaceBuilder() {
         setupView()
