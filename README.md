@@ -15,3 +15,5 @@ Add an UIView to your project in interface builder and change its class to FPAct
 You can define all the properties directly in IB without writing any code
 But if you are not a big fan of IB you can use this class directly in your code
 
+#
+[![Indicator](https://github.com/punty/FPActivityIndicator/blob/master/indicator.gif)](#features)
