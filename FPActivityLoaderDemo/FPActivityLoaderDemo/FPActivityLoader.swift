@@ -46,7 +46,7 @@ class FPActivityLoader: UIView {
     @IBInspectable
     var hideWhenNotAnimating: Bool = true {
         didSet {
-            self.hidden = (self.hideWhenNotAnimating) && (!self.animating)
+            hidden = (hideWhenNotAnimating) && (!animating)
         }
     }
     
@@ -127,9 +127,7 @@ class FPActivityLoader: UIView {
         circleLayer.lineWidth = lineWidth
         circleLayer.lineCap = kCALineCapRound
         circleLayer.strokeColor = strokeColor.CGColor
- 
     }
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -139,12 +137,11 @@ class FPActivityLoader: UIView {
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
         circleLayer.path = path.CGPath
         circleLayer.frame = bounds
-        
     }
     
+    
     func updateAnimation() {
-        
-        self.hidden = (self.hideWhenNotAnimating) && (!self.animating)
+        hidden = (hideWhenNotAnimating) && (!animating)
         if animating {
             circleLayer.addAnimation(strokeAnimation, forKey: "strokeLineAnimation")
             circleLayer.addAnimation(rotationAnimation, forKey: "rotationAnimation")
