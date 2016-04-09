@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FPActivityLoader.xcscheme</key>
+		<key>FPActivityLoaderDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>910E70D61CB2270A005592E9</key>
+		<key>91F741531CB92C55009CB4EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

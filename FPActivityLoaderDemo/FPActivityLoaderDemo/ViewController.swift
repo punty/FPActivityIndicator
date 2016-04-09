@@ -9,19 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     @IBOutlet weak var indicator: FPActivityLoader!
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -29,9 +29,9 @@ class ViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-
+    
     @IBAction func animatingChanged(sender: UISwitch) {
-         indicator.animating = sender.on
+        indicator.animating = sender.on
     }
     
     @IBAction func hidesIfNotAnimating(sender: UISwitch) {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func timeChanged(sender: UISlider) {
-         indicator.circleTime = Double(sender.value)
+        indicator.circleTime = Double(sender.value)
     }
     @IBAction func lineWidthChanged(sender: UISlider) {
         indicator.lineWidth = CGFloat(sender.value)

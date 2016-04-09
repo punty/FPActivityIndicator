@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  FPActivityLoader
+//  FPActivityLoaderDemo
 //
-//  Created by Francesco Puntillo on 04/04/2016.
-//  Copyright © 2016 Francesco Puntillo. All rights reserved.
+//  Created by Francesco Puntillo on 09/04/2016.
+//  Copyright © 2016 punty. All rights reserved.
 //
 
 import UIKit

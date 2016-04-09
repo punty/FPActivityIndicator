@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "910E70D61CB2270A005592E9"
-               BuildableName = "FPActivityLoader.app"
-               BlueprintName = "FPActivityLoader"
-               ReferencedContainer = "container:FPActivityLoader.xcodeproj">
+               BlueprintIdentifier = "91F741531CB92C55009CB4EB"
+               BuildableName = "FPActivityLoaderDemo.app"
+               BlueprintName = "FPActivityLoaderDemo"
+               ReferencedContainer = "container:FPActivityLoaderDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "910E70D61CB2270A005592E9"
-            BuildableName = "FPActivityLoader.app"
-            BlueprintName = "FPActivityLoader"
-            ReferencedContainer = "container:FPActivityLoader.xcodeproj">
+            BlueprintIdentifier = "91F741531CB92C55009CB4EB"
+            BuildableName = "FPActivityLoaderDemo.app"
+            BlueprintName = "FPActivityLoaderDemo"
+            ReferencedContainer = "container:FPActivityLoaderDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "910E70D61CB2270A005592E9"
-            BuildableName = "FPActivityLoader.app"
-            BlueprintName = "FPActivityLoader"
-            ReferencedContainer = "container:FPActivityLoader.xcodeproj">
+            BlueprintIdentifier = "91F741531CB92C55009CB4EB"
+            BuildableName = "FPActivityLoaderDemo.app"
+            BlueprintName = "FPActivityLoaderDemo"
+            ReferencedContainer = "container:FPActivityLoaderDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "910E70D61CB2270A005592E9"
-            BuildableName = "FPActivityLoader.app"
-            BlueprintName = "FPActivityLoader"
-            ReferencedContainer = "container:FPActivityLoader.xcodeproj">
+            BlueprintIdentifier = "91F741531CB92C55009CB4EB"
+            BuildableName = "FPActivityLoaderDemo.app"
+            BlueprintName = "FPActivityLoaderDemo"
+            ReferencedContainer = "container:FPActivityLoaderDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
