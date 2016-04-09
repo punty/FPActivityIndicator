@@ -11,9 +11,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 A simple activity indicator. Written in Swift. Simple and customisable from Interface builder and by code
 
 #How to use it?
-Add an UIView to your project in interface builder and change its class to FPActivityIndicator
-You can define all the properties directly in IB without writing any code
-But if you are not a big fan of IB you can use this class directly in your code
+
+Just add FPActivityIndicator.swift to your project
+
+Insert one UIView to your project in interface builder and change its class to FPActivityIndicator
+You can define all the properties directly in IB without writing any code (using IBDesignable and IBInspectable)
+
+If you are not a big fan of IB you can use this class directly in your code
 
 #
 [![Indicator](https://github.com/punty/FPActivityIndicator/blob/master/indicator.gif)](#features)
