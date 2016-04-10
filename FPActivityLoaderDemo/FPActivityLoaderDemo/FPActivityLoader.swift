@@ -15,17 +15,7 @@ class FPActivityLoader: UIView {
     static let defaultLineWidth: CGFloat = 2.0
     static let defaultCircleTime: Double = 1.5
     
-    private var strokeAnimation: CAAnimationGroup {
-        get {
-            return generateAnimation()
-        }
-    }
-    
-    private var rotationAnimation: CABasicAnimation {
-        get {
-            return generateRotationAnimation()
-        }
-    }
+   
     
     private var circleLayer: CAShapeLayer = CAShapeLayer()
     
@@ -57,10 +47,27 @@ class FPActivityLoader: UIView {
         }
     }
     
+    
+    private func pauseLayer(layer: CALayer) {
+        let pausedTime = layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        layer.speed = 0
+        layer.timeOffset = pausedTime
+    }
+    
+    private func resumeLayer(layer: CALayer) {
+        let pausedTime = layer.timeOffset
+        layer.speed = 1
+        layer.timeOffset = 0
+        layer.beginTime = 0
+        let timeSincePaused = layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
+        layer.beginTime = timeSincePaused
+    }
+    
     @IBInspectable
     var circleTime: Double = 1.5 {
         didSet {
-            circleLayer.removeAllAnimations()
+            circleLayer.addAnimation(generateAnimation(), forKey: "strokeLineAnimation")
+            circleLayer.addAnimation(generateRotationAnimation(), forKey: "rotationAnimation")
             updateAnimation()
         }
     }
@@ -127,6 +134,8 @@ class FPActivityLoader: UIView {
         circleLayer.lineWidth = lineWidth
         circleLayer.lineCap = kCALineCapRound
         circleLayer.strokeColor = strokeColor.CGColor
+        circleLayer.addAnimation(generateAnimation(), forKey: "strokeLineAnimation")
+        circleLayer.addAnimation(generateRotationAnimation(), forKey: "rotationAnimation")
     }
     
     override func layoutSubviews() {
@@ -143,10 +152,9 @@ class FPActivityLoader: UIView {
     func updateAnimation() {
         hidden = (hideWhenNotAnimating) && (!animating)
         if animating {
-            circleLayer.addAnimation(strokeAnimation, forKey: "strokeLineAnimation")
-            circleLayer.addAnimation(rotationAnimation, forKey: "rotationAnimation")
+            resumeLayer(circleLayer)
         } else {
-            circleLayer.removeAllAnimations()
+            pauseLayer(circleLayer)
         }
     }
     
