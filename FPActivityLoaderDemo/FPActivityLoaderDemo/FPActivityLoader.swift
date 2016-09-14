@@ -11,18 +11,18 @@ import UIKit
 @IBDesignable
 class FPActivityLoader: UIView {
     
-    static let defaultColor = UIColor.blackColor()
+    static let defaultColor = UIColor.black
     static let defaultLineWidth: CGFloat = 2.0
     static let defaultCircleTime: Double = 1.5
     
    
     
-    private var circleLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var circleLayer: CAShapeLayer = CAShapeLayer()
     
     @IBInspectable
-    var strokeColor: UIColor = UIColor.blackColor() {
+    var strokeColor: UIColor = UIColor.black {
         didSet {
-            circleLayer.strokeColor = strokeColor.CGColor
+            circleLayer.strokeColor = strokeColor.cgColor
         }
     }
     
@@ -36,7 +36,7 @@ class FPActivityLoader: UIView {
     @IBInspectable
     var hideWhenNotAnimating: Bool = true {
         didSet {
-            hidden = (hideWhenNotAnimating) && (!animating)
+            isHidden = (hideWhenNotAnimating) && (!animating)
         }
     }
     
@@ -48,26 +48,26 @@ class FPActivityLoader: UIView {
     }
     
     
-    private func pauseLayer(layer: CALayer) {
-        let pausedTime = layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+    fileprivate func pauseLayer(_ layer: CALayer) {
+        let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0
         layer.timeOffset = pausedTime
     }
     
-    private func resumeLayer(layer: CALayer) {
+    fileprivate func resumeLayer(_ layer: CALayer) {
         let pausedTime = layer.timeOffset
         layer.speed = 1
         layer.timeOffset = 0
         layer.beginTime = 0
-        let timeSincePaused = layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
+        let timeSincePaused = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
         layer.beginTime = timeSincePaused
     }
     
     @IBInspectable
     var circleTime: Double = 1.5 {
         didSet {
-            circleLayer.addAnimation(generateAnimation(), forKey: "strokeLineAnimation")
-            circleLayer.addAnimation(generateRotationAnimation(), forKey: "rotationAnimation")
+            circleLayer.add(generateAnimation(), forKey: "strokeLineAnimation")
+            circleLayer.add(generateRotationAnimation(), forKey: "rotationAnimation")
             updateAnimation()
         }
     }
@@ -129,13 +129,13 @@ class FPActivityLoader: UIView {
     
     func setupView() {
         layer.addSublayer(self.circleLayer)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         circleLayer.fillColor = nil
         circleLayer.lineWidth = lineWidth
         circleLayer.lineCap = kCALineCapRound
-        circleLayer.strokeColor = strokeColor.CGColor
-        circleLayer.addAnimation(generateAnimation(), forKey: "strokeLineAnimation")
-        circleLayer.addAnimation(generateRotationAnimation(), forKey: "rotationAnimation")
+        circleLayer.strokeColor = strokeColor.cgColor
+        circleLayer.add(generateAnimation(), forKey: "strokeLineAnimation")
+        circleLayer.add(generateRotationAnimation(), forKey: "rotationAnimation")
     }
     
     override func layoutSubviews() {
@@ -144,13 +144,13 @@ class FPActivityLoader: UIView {
         let radius = min(bounds.size.width, bounds.size.height)/2.0 - circleLayer.lineWidth/2.0
         let endAngle = CGFloat(2*M_PI)
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
-        circleLayer.path = path.CGPath
+        circleLayer.path = path.cgPath
         circleLayer.frame = bounds
     }
     
     
     func updateAnimation() {
-        hidden = (hideWhenNotAnimating) && (!animating)
+        isHidden = (hideWhenNotAnimating) && (!animating)
         if animating {
             resumeLayer(circleLayer)
         } else {
